@@ -41,7 +41,7 @@ PasswordAuthentication no
 UsePAM no
 AllowTcpForwarding no
 X11Forwarding no
-Port=4279
+Port=2255
 
 systemctl reload sshd
 
@@ -50,7 +50,7 @@ UBUNTU
 - apt update
 - apt upgrade
 - ufw enable
-- ufw allow 4279/tcp
+- ufw allow 2255/tcp
 ## if needed to delete   ufw delete allow 22/tcp
 - adduser mrpalmer
 - passwd mrpalmer
