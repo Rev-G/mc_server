@@ -18,7 +18,7 @@ PasswordAuthentication no
 UsePAM no
 AllowTcpForwarding no
 X11Forwarding no
-Port=4279
+Port=2255
 
 systemctl reload sshd
 
@@ -30,8 +30,8 @@ Cloud at cost init (currently)
 1. apt upgrade
 1. update sshd_config (with Port, notrootlogon, and no x11forward)
 1. systemctl restart sshd
-1. adduser mrpalmer
-1. usermod -aG sudo mrpalmer
+1. adduser {username}
+1. usermod -aG sudo {username}
 1. ufw enable
 1. ufw allow 2255/tcp
 
@@ -70,4 +70,8 @@ docker run -d -it --name bds-flat-creative \
   -p 19132:19132/udp itzg/minecraft-bedrock-server
 
 #this is what i ran that worked
-docker run -d -it --name=minecraft1 -e EULA=TRUE -p 19132:19132/udp -v /usr/local/share/minecraft/minecraft1:/data itzg/minecraft-bedrock-server
+docker run -d -it --name=minecraft1 -e EULA=TRUE SERVER_NAME="Minecraft 1" -p 19132:19132/udp -v /usr/local/share/minecraft/minecraft1:/data itzg/minecraft-bedrock-server
+
+docker run -d -it --name=minecraft2 -e EULA=TRUE -e GAMEMODE=creative -e ALLOW_CHEATS=true -e SERVER_NAME="Minecraft 2" -e SERVER_PORT=19142 -e LEVEL_NAME="Bedrock_Mine" -e LEVEL_SEED="2048971879" -p 19142:19142/udp -v /usr/local/share/minecraft/minecraft2:/data itzg/minecraft-bedrock-server
+
+docker run -d -it --name=minecraft-survival -e EULA=TRUE -e GAMEMODE=survival -e DIFFICULTY=normal -e SERVER_NAME="Minecraft Survival" -e SERVER_PORT=19152 -e LEVEL_NAME="Bedrock_Survival" -e LEVEL_SEED="625452737" -p 19152:19152/udp -v /usr/local/share/minecraft/minecraft-survival:/data itzg/minecraft-bedrock-server
