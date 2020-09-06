@@ -103,3 +103,5 @@ mc flat
 mc jungle
 45.62.216.96
 19172
+
+sudo tar -czvf /home/mrpalmer/minecraft-backups/mcsurvival.zip whitelist.json server.properties worlds
