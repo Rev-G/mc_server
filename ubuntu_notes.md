@@ -71,17 +71,17 @@ docker run -d -it --name bds-flat-creative \
 
 #this is what i ran that worked
 
-#should rename this one to minecraft-testbed
-docker run -d -it --name=minecraft1 -e EULA=TRUE SERVER_NAME="minecraft1" -e SERVER_NAME="Minecraft 1" -p 19132:19132/udp -v /usr/local/share/minecraft/minecraft1:/data itzg/minecraft-bedrock-server
+#should rename this one to minecraft-testbed. 
+docker run -d -it --name=minecraft1 -e EULA=TRUE -e SERVER_NAME="minecraft1" -e SERVER_NAME="Minecraft 1" -p 19132:19132/udp -v /usr/local/share/minecraft/minecraft1:/data itzg/minecraft-bedrock-server
 
-#should rename this one to minecraft-creative
+#should rename this one to minecraft-creative. 
 docker run -d -it --name=minecraft2 -e EULA=TRUE -e GAMEMODE=creative -e ALLOW_CHEATS=true -e SERVER_NAME="Minecraft 2" -e SERVER_PORT=19142 -e LEVEL_NAME="Bedrock_Mine" -e LEVEL_SEED="2048971879" -p 19142:19142/udp -v /usr/local/share/minecraft/minecraft2:/data itzg/minecraft-bedrock-server
 
 docker run -d -it --name=minecraft-survival -e EULA=TRUE -e GAMEMODE=survival -e DIFFICULTY=normal -e SERVER_NAME="Minecraft Survival" -e SERVER_PORT=19152 -e LEVEL_NAME="Bedrock_Survival" -e LEVEL_SEED="625452737" -p 19152:19152/udp -v /usr/local/share/minecraft/minecraft-survival:/data itzg/minecraft-bedrock-server
 
 docker run -d -it --name=minecraft-flat -e EULA=TRUE -e LEVEL_TYPE=flat -e GAMEMODE=creative -e ALLOW_CHEATS=true -e SERVER_NAME="Minecraft Flat" -e SERVER_PORT=19162 -e LEVEL_NAME="Bedrock_Flat_Mine" -p 19162:19162/udp -v /usr/local/share/minecraft/minecraft-flat:/data itzg/minecraft-bedrock-server
 
-docker run -d -it --name=jungle-survival -e EULA=TRUE -e GAMEMODE=survival -e DIFFICULTY=normal -e SERVER_NAME="Jungle Survival" -e SERVER_PORT=19172 -e LEVEL_NAME="Jungle_Survival" -e LEVEL_SEED="87953651674304230" -p 19172:19172/udp -v /usr/local/share/minecraft/jungle-survival:/data itzg/minecraft-bedrock-server
+docker run -d -it --name=jungle-survival -e EULA=TRUE -e GAMEMODE=survival -e DIFFICULTY=normal -e SERVER_NAME="Jungle Survival" -e SERVER_PORT=19172 -e LEVEL_NAME="Jungle_Survival" -e LEVEL_SEED="9144" -p 19172:19172/udp -v /usr/local/share/minecraft/jungle-survival:/data itzg/minecraft-bedrock-server
 
 
 minecraft1
